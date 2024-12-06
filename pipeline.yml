@@ -1,4 +1,4 @@
-name: Pipeline with Approval
+name: Test Pipeline
 
 on:
   push:
@@ -10,5 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Run Tests
-      run: echo "Running tests..."
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Tests
+        run: echo "Running tests..."
