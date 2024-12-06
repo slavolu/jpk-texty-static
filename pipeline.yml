@@ -1,15 +1,14 @@
-name: Pipeline test
+name: Pipeline with Approval
+
 on:
   push:
     branches:
       - main
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
-    
+
     steps:
-     - name: Validate pipeline.yml syntax
-      run: |
-        # Run any command to test your pipeline syntax (for example, linter or dry run)
-        echo "Testing pipeline syntax"
+    - name: Run Tests
+      run: echo "Running tests..."
