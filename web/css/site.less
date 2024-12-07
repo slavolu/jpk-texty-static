@@ -1,0 +1,630 @@
+/* Colors */
+@bgColor: rgb(150, 111, 94);
+@pageWidth: 1100px;
+
+
+/* https://www.w3.org/TR/mediaqueries-3/#orientation 
+@media all and (orientation:portrait) {}
+@media all and (orientation:landscape) {}
+*/
+/*@media all and (orientation:portrait) {
+}
+
+@media all and (orientation:landscape) {
+}*/
+
+@import url(https://fonts.googleapis.com/css?family=Merienda&subset=latin,latin-ext);
+/*
+ * Preboot v2
+ *
+ * Open sourced under MIT license by @mdo.
+ * Some variables and mixins from Bootstrap (Apache 2 license).
+ */
+
+body,
+html,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+fieldset,
+img {
+    border: 0;
+}
+
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+    font-style: normal;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+caption,
+th {
+    text-align: left;
+}
+
+h1,
+h2{
+    font-size: 1.5em;
+}
+
+h1 {
+    font-weight: 400;
+}
+
+abbr,
+acronym,
+img {
+    border: 0;
+}
+
+body {
+    font-size: .75em;
+    color: #000;
+}
+
+h1 {
+    padding-bottom: 0;
+    margin-bottom: 30px;
+}
+
+h2, h3, h4, p {
+    margin-bottom: 15px;
+}
+
+h3 {
+    font-size: 1.3em;
+}
+
+h4 {
+    font-size: 1.1em;
+    font-style: italic;
+    font-weight: bold;
+    &.normal{
+        font-style: normal;
+    }
+}
+
+h5,
+h6 {
+    font-size: 1em;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+/* Custom Theme - background & Layout & Custom font */
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+html {
+    background-color: @bgColor;
+    background-attachment: fixed;
+    background-image: url(../bg-over.png), url(../bg.jpg);
+    background-position: 0 0, 0 0;
+    background-repeat: no-repeat, repeat;
+    background-size: cover, auto;
+}
+
+body{
+    font-family: "Times New Roman", Times, serif;
+}
+
+// To flip BG image: bg-over.png
+body::before {
+    content: "";
+    //position: absolute;
+    position: fixed;
+    //background-attachment: fixed;
+    //top: 0;
+    //left: 0;
+    width: 100%;
+    height: 100%;
+    
+    background-image: url(../bg-over.png);
+    background-size: cover; /* Change to auto or contain if needed */
+    background-repeat: no-repeat;
+    background-position: -100px -100px;
+    transform: scaleX(-1); /* To flip all horizontatly */
+    //transform-origin: center;
+    z-index: -1;
+    // fade out
+    opacity: 0.6;
+}
+
+h1,
+h2,
+h3,
+#navigation-primary,
+#navigation-secondary{
+    font-family: "Merienda";
+}
+
+a {
+    color: #00241C;
+    &:hover {
+        color: rgba(203, 44, 14, 1);
+    }
+}
+
+/* Used in js for 'Obsah' */
+.hidden {
+    display: none;
+}
+
+/* Center all content */
+#page-wrapper{
+    max-width: @pageWidth;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+#content-wrapper,
+#footer-content,
+#navigation-primary,
+#content {
+    width: auto;
+    min-width: auto;
+}
+
+/* Header & Primary Navigation */
+#header {
+    z-index: 10;
+}
+#header-wrapper{
+    max-width: @pageWidth;
+    margin: 0 auto;
+}
+
+// #header{
+//     position: initial;
+//     position: sticky;
+//     top: 0;
+//     z-index: 100;
+//     // &::before{
+//     //     height: inherit;
+//     //     width: inherit;
+//     //     content: " ";
+//     //     position: fixed;
+//     // }
+// }
+
+#navigation-primary {
+    font-size: 1.2em;
+    overflow: hidden;
+    font-weight: bold;
+    padding: 20px 5px 10px;
+    // ul{
+    //     padding-bottom: 20px;
+    // }
+    li {
+        float: left;
+        // line-height: 1.5em;
+        text-transform: uppercase;
+        font-weight: bold;
+
+        //font-family: "Bradley Hand ITC Std";
+        //font-family: "Bradley Hand ITC Std", Calibri;
+        // Bradley: https://www.w3.org/2009/05/css_fonts.htm
+        // If not available will fallback to Merienda
+        font-family: "Bradley Hand ITC";
+        
+        font-size: 1.6em;
+        padding: 0 12px;
+        a {
+            display: block;
+            float: left;
+            padding: 0;
+            &:hover{
+                color: #fff;
+                text-decoration: none;
+            }
+        }
+        &#logo {
+            font-size: 1em;
+            img{
+                height: 60px;
+            }
+        }
+    }
+}
+
+/* Header Secondary Navigation */
+
+#navigation-secondary {
+    color: rgba(203, 44, 14, 1);
+    font-size: 13px;
+    margin-bottom: 20px;
+    padding: 0 15px;
+    overflow:hidden;
+    li{
+        float: left;
+        padding: 0 10px;
+        line-height: 25px;
+        font-weight: bold;
+        /* Let user capitalize as they like */
+        //text-transform: capitalize;
+    }
+    a:hover {
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+
+/* Footer & Navigation */
+
+#footer-content {
+    position: initial;
+    margin: 0 auto;
+    padding: 20px;
+    overflow: hidden;
+}
+
+#footer {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 0.8em;
+    a:hover {
+        color: #fff;
+        text-decoration: underline;
+    }
+    ul {
+        margin: 5px 25px;
+    }
+    .parent {
+        margin: 5px 0 10px 0;
+        float: left;
+        ul {
+            padding: 0 10px;
+            line-height: 15px;
+        }
+        li {
+            padding: 0;
+            margin-right: 10px;
+            display:inline-block;
+            text-align: left;
+            text-transform: capitalize;
+        }
+    }
+    #copy {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 1);
+        margin: 15px 0 5px;
+        text-align:center;
+    }
+}
+
+/* Menu Color */
+
+#navigation-primary, 
+#footer
+{
+    color: rgba(249, 194, 155, 1);
+    a{
+        color: rgba(180, 233, 239, 1);
+    }
+}
+
+/* Content & Text */
+
+#content-wrapper {
+    background: url(../bg-canvas.jpg) 0 0 repeat;
+    background-color: #faf6e4;
+    position: relative;
+    margin: 0 20px;
+    border-radius: 1px;
+    border: 1px solid #000;
+
+    // Ensure it scrolles under the #header
+    z-index: -1;
+    // box-shadow: 0px 0px 10px 7px rgba(0, 0, 0, 0.6);
+}
+
+@content-text-indent: 2em;
+
+#content {
+    padding: 0 25px 0 25px;
+    position: relative;
+    /*overflow: hidden; resets position: sticky; for #text-links*/
+    // overflow: hidden;
+    p{
+        line-height: 1.6em;
+        text-indent: @content-text-indent;
+        &.right {
+            text-align: right;
+        }
+        &.slim {
+            max-width: 350px;
+        }
+        &.center {
+            text-indent: 0;
+            text-align: center;
+        }
+        span {
+            &.right {
+                display: block;
+                text-align: right;
+            }
+            &.slim {
+                display: block;
+                max-width: 350px;
+            }
+            &.ref {
+                position: relative;
+                left: -2em;
+            }
+        }
+    }
+    p, ul, ol {
+        margin: 0 0 5px 0;
+        // Loooking better with the Times New Roman
+        letter-spacing: 0.1px;
+        //font-size: 1.24em;
+        font-size: 1.5em;
+    }
+    .center p{
+        text-indent: 0;
+    }
+    div.indent{
+        margin: @content-text-indent;
+        p{
+            text-indent: 0;
+        }
+    }
+}
+
+#content-container {
+    padding: 25px 0px;
+    box-shadow: inset 0px 0px 55px 30px rgba(100, 50, 10, 0.3);
+}
+
+#text {
+    @text-padding: 50px;
+    border: 1px solid rgb(163, 139, 69, 0.6);
+    padding: @text-padding;
+    background-color:rgba(255, 255, 255, 0.6);
+    margin-top: 0px;
+
+    img {
+        max-width: 450px;
+        width: 100%;
+    }
+
+    // TODO: make the table mobile friendly
+    &.prehistory{
+        th{
+            text-transform: capitalize;
+        }
+    }
+    
+    // As per request
+    &.poems{
+        // Flex left offset: Any vw (viewport width) over 500px will grow by 0.1%
+        // Min 50px and max of 200px
+        padding-left: clamp(@text-padding, calc(@text-padding + (100vw - 500px) * 0.1), 200px);
+
+        p{
+            text-indent: unset;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        h4{
+            font-style: unset;
+            font-size: 1.4em;
+            font-weight: normal;
+            margin-bottom: 30px;
+        }
+        // e.g. h3 after h5 - in poems h3 after year
+        h3:not(.default) {
+            margin-top: 3.5em;
+        }
+        h5{
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            font-style: italic;
+            margin-top: 3.5em;
+        }
+    }
+}
+
+// In epos-2
+#text-adds {
+    padding: 20px 20px 0 20px;
+    font-size: 0.8em;
+    ol{
+        li{
+            list-style-type: none;
+            margin-bottom: 10px;
+            &:last-child{
+                margin-bottom: 0px;
+            }
+        }
+    }
+}
+
+.center {
+    text-align: center;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.letter-spaced{
+    letter-spacing: 5px;
+    word-break: break-all;
+}
+
+img.float-left{
+    float: left;
+    margin: 5px 30px 10px 0;
+}
+
+img.float-right{
+    float: right;
+    margin: 5px 0 10px 30px;
+}
+
+// Table - prehistorie
+// TODO: make it responsive
+@tableColor: @bgColor;
+#table{
+    overflow: auto;
+    letter-spacing: .1px;
+    font-size: 1.2em;
+}
+thead{
+    background-color: @tableColor;
+    color: #fff;
+    font-weight: bold;
+}
+
+th, td{
+    padding: 5px 10px;
+    vertical-align: top;
+}
+
+tbody{
+    tr {
+        //background-color: #DCE6F1;
+        //background-color: rgba(197, 217, 241, 0.5);
+        background-color: lighten(@tableColor, 40%);
+        &.highlight{
+            background-color: #E9D7D7;
+            color: #963634;
+        }
+        &:nth-child(even){
+            //background-color: #C5D9F1;
+            //background-color: rgba(197, 217, 241, 0.8);
+            background-color: lighten(@tableColor, 45%);
+        }
+    }
+    td {
+        &:nth-child(1),
+        &:nth-child(2){
+            font-weight:bold;
+            white-space: nowrap;
+        }
+        &:nth-child(4){
+            max-width: 200px;
+            overflow-wrap: break-word;
+        }
+    }
+}
+
+
+
+
+// img.float-left,
+// img.float-right{
+//     max-width: 350px;
+//     width: 100%;
+// }
+
+/* TOOD: screen width specific - avoid if possible */
+// @media only screen and (max-width: 767px) {
+//     #text-links {
+//         width: unset;
+//         float: none;
+//         position: unset;
+//     }
+
+//     #text.text-w-links {
+//         margin-left: 0px;
+//         margin-top: 20px;
+//     }
+// }
+
+/* Font - Bradley  */
+
+// @font-face {
+//     font-family: "Bradley Hand ITC Std";
+//     src: url("https://db.onlinewebfonts.com/t/ebea2aa546d58c52c20de57835663484.eot");
+//     src: url("https://db.onlinewebfonts.com/t/ebea2aa546d58c52c20de57835663484.eot?#iefix")format("embedded-opentype"),
+//     url("https://db.onlinewebfonts.com/t/ebea2aa546d58c52c20de57835663484.woff2")format("woff2"),
+//     url("https://db.onlinewebfonts.com/t/ebea2aa546d58c52c20de57835663484.woff")format("woff"),
+//     url("https://db.onlinewebfonts.com/t/ebea2aa546d58c52c20de57835663484.ttf")format("truetype"),
+//     url("https://db.onlinewebfonts.com/t/ebea2aa546d58c52c20de57835663484.svg#Bradley Hand ITC Std")format("svg");
+// }
+
+
+// All under media Needs to override all above
+@media (min-width: 480px){
+    @text-padding-sides: 40px;
+    
+
+    #header {
+        position: sticky;
+        top: 0;
+        background-image: url("../bg.jpg");
+    }
+    #header::before {
+        content: "";
+        background-image: url("../bg-over.png");
+        background-repeat: no-repeat;
+        background-position: -100px -100px;
+        
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        z-index: -1;
+        height:100%;
+        width: 100%;
+    }
+}
