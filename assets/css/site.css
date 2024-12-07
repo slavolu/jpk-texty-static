@@ -1,0 +1,450 @@
+/* Colors */
+/* https://www.w3.org/TR/mediaqueries-3/#orientation 
+@media all and (orientation:portrait) {}
+@media all and (orientation:landscape) {}
+*/
+/*@media all and (orientation:portrait) {
+}
+
+@media all and (orientation:landscape) {
+}*/
+@font-face {
+  font-family: 'Merienda';
+  font-style: normal;
+  font-weight: 400;
+  src: url(https://fonts.gstatic.com/s/merienda/v19/gNMaW3x8Qoy5_mf8uUkJGHtiYXjmKFy5enhYQET4.ttf) format('truetype');
+}
+/*
+ * Preboot v2
+ *
+ * Open sourced under MIT license by @mdo.
+ * Some variables and mixins from Bootstrap (Apache 2 license).
+ */
+body,
+html,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+fieldset,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin: 0;
+  padding: 0;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+fieldset,
+img {
+  border: 0;
+}
+address,
+caption,
+cite,
+code,
+dfn,
+th,
+var {
+  font-style: normal;
+  font-weight: normal;
+}
+ol,
+ul {
+  list-style: none;
+}
+caption,
+th {
+  text-align: left;
+}
+h1,
+h2 {
+  font-size: 1.5em;
+}
+h1 {
+  font-weight: 400;
+}
+abbr,
+acronym,
+img {
+  border: 0;
+}
+body {
+  font-size: 0.75em;
+  color: #000;
+}
+h1 {
+  padding-bottom: 0;
+  margin-bottom: 30px;
+}
+h2,
+h3,
+h4,
+p {
+  margin-bottom: 15px;
+}
+h3 {
+  font-size: 1.3em;
+}
+h4 {
+  font-size: 1.1em;
+  font-style: italic;
+  font-weight: bold;
+}
+h4.normal {
+  font-style: normal;
+}
+h5,
+h6 {
+  font-size: 1em;
+}
+a {
+  outline: none;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+/* Custom Theme - background & Layout & Custom font */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after {
+  clear: both;
+}
+html {
+  background-color: #966f5e;
+  background-attachment: fixed;
+  background-image: url(../bg-over.png), url(../bg.jpg);
+  background-position: 0 0, 0 0;
+  background-repeat: no-repeat, repeat;
+  background-size: cover, auto;
+}
+body {
+  font-family: "Times New Roman", Times, serif;
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-image: url(../bg-over.png);
+  background-size: cover;
+  /* Change to auto or contain if needed */
+  background-repeat: no-repeat;
+  background-position: -100px -100px;
+  transform: scaleX(-1);
+  /* To flip all horizontatly */
+  z-index: -1;
+  opacity: 0.6;
+}
+h1,
+h2,
+h3,
+#navigation-primary,
+#navigation-secondary {
+  font-family: "Merienda";
+}
+a {
+  color: #00241C;
+}
+a:hover {
+  color: #cb2c0e;
+}
+/* Used in js for 'Obsah' */
+.hidden {
+  display: none;
+}
+/* Center all content */
+#page-wrapper {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+#content-wrapper,
+#footer-content,
+#navigation-primary,
+#content {
+  width: auto;
+  min-width: auto;
+}
+/* Header & Primary Navigation */
+#navigation-primary {
+  font-size: 1.2em;
+  overflow: hidden;
+  font-weight: bold;
+  padding: 20px 5px 10px;
+}
+#navigation-primary li {
+  float: left;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: "Bradley Hand ITC";
+  font-size: 1.6em;
+  padding: 0 14px;
+}
+#navigation-primary li a {
+  display: block;
+  float: left;
+  padding: 0;
+}
+#navigation-primary li a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+#navigation-primary li#logo {
+  font-size: 1em;
+}
+#navigation-primary li#logo img {
+  height: 60px;
+}
+/* Header Secondary Navigation */
+#navigation-secondary {
+  color: #cb2c0e;
+  font-size: 13px;
+  margin-bottom: 20px;
+  padding: 0 15px;
+  overflow: hidden;
+}
+#navigation-secondary li {
+  float: left;
+  padding: 0 10px;
+  line-height: 25px;
+  font-weight: bold;
+  /* Let user capitalize as they like */
+}
+#navigation-secondary a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+/* Footer & Navigation */
+#footer-content {
+  position: initial;
+  margin: 0 auto;
+  padding: 20px;
+  overflow: hidden;
+}
+#footer {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+  font-size: 0.8em;
+}
+#footer a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+#footer ul {
+  margin: 5px 25px;
+}
+#footer .parent {
+  margin: 5px 0 10px 0;
+  float: left;
+}
+#footer .parent ul {
+  padding: 0 10px;
+  line-height: 15px;
+}
+#footer .parent li {
+  padding: 0;
+  margin-right: 10px;
+  display: inline-block;
+  text-align: left;
+  text-transform: capitalize;
+}
+#footer #copy {
+  font-size: 0.9em;
+  color: #ffffff;
+  margin: 15px 0 5px;
+  text-align: center;
+}
+/* Menu Color */
+#navigation-primary,
+#footer {
+  color: #f9c29b;
+}
+#navigation-primary a,
+#footer a {
+  color: #b4e9ef;
+}
+/* Content & Text */
+#content-wrapper {
+  background: url(../bg-canvas.jpg) 0 0 repeat;
+  background-color: #faf6e4;
+  position: relative;
+  margin: 0 20px;
+  border-radius: 1px;
+  border: 1px solid #000;
+}
+#content {
+  padding: 0 25px 0 25px;
+  position: relative;
+  /*overflow: hidden; resets position: sticky; for #text-links*/
+}
+#content p {
+  line-height: 1.6em;
+  text-indent: 2em;
+}
+#content p.right {
+  text-align: right;
+}
+#content p.slim {
+  max-width: 350px;
+}
+#content p.center {
+  text-indent: 0;
+  text-align: center;
+}
+#content p span.right {
+  display: block;
+  text-align: right;
+}
+#content p span.slim {
+  display: block;
+  max-width: 350px;
+}
+#content p span.ref {
+  position: relative;
+  left: -2em;
+}
+#content p,
+#content ul,
+#content ol {
+  margin: 0 0 5px 0;
+  letter-spacing: 0.1px;
+  font-size: 1.5em;
+}
+#content .center p {
+  text-indent: 0;
+}
+#content div.indent {
+  margin: 2em;
+}
+#content div.indent p {
+  text-indent: 0;
+}
+#content-container {
+  padding: 25px 0px;
+  box-shadow: inset 0px 0px 55px 30px rgba(100, 50, 10, 0.3);
+}
+#text {
+  border: 1px solid #a38b45;
+  padding: 50px;
+}
+#text.prehistory th {
+  text-transform: capitalize;
+}
+#text.poems {
+  padding-left: calc(50px + (100vw - 500px) * 0.05);
+}
+#text.poems p {
+  text-indent: unset;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+#text.poems h4 {
+  font-style: unset;
+  font-size: 1.4em;
+  font-weight: normal;
+  margin-bottom: 30px;
+}
+#text.poems h3:not(.default) {
+  margin-top: 3.5em;
+}
+#text.poems h5 {
+  font-size: 1.4em;
+  margin-bottom: 10px;
+  font-style: italic;
+  margin-top: 3.5em;
+}
+#text-adds {
+  padding: 20px 20px 0 20px;
+  font-size: 0.8em;
+}
+#text-adds ol li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+#text-adds ol li:last-child {
+  margin-bottom: 0px;
+}
+#text {
+  background-color: rgba(255, 255, 255, 0.6);
+  margin-top: 0px;
+}
+#text img {
+  max-width: 450px;
+  width: 100%;
+}
+.center {
+  text-align: center;
+}
+.underline {
+  text-decoration: underline;
+}
+.italic {
+  font-style: italic;
+}
+.letter-spaced {
+  letter-spacing: 5px;
+  word-break: break-all;
+}
+img.float-left {
+  float: left;
+  margin: 5px 30px 10px 0;
+}
+img.float-right {
+  float: right;
+  margin: 5px 0 10px 30px;
+}
+#table {
+  overflow: auto;
+  letter-spacing: 0.1px;
+  font-size: 1.2em;
+}
+thead {
+  background-color: #966f5e;
+  color: #fff;
+  font-weight: bold;
+}
+th,
+td {
+  padding: 5px 10px;
+  vertical-align: top;
+}
+tbody tr {
+  background-color: #e7ddd9;
+}
+tbody tr.highlight {
+  background-color: #E9D7D7;
+  color: #963634;
+}
+tbody tr:nth-child(even) {
+  background-color: #f1ebe9;
+}
+tbody td:nth-child(1),
+tbody td:nth-child(2) {
+  font-weight: bold;
+  white-space: nowrap;
+}
+tbody td:nth-child(4) {
+  max-width: 200px;
+  overflow-wrap: break-word;
+}
+/* TOOD: screen width specific - avoid if possible */
+/* Font - Bradley  */
