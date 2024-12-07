@@ -17,7 +17,7 @@ jobs:
             npm install terser
 
       - name: Clean CSS
-        run: lessc -clean-css 'assets/css/site.less assets/css/site.css'
+        run: npx lessc -clean-css 'assets/css/site.less assets/css/site.css'
 
       - name: Run Tests
         run: echo "Running tests..."
