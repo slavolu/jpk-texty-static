@@ -11,10 +11,9 @@ jobs:
 
     steps:
       - name: Install Less Dependencies
-        run: npm install less
-
-      - name: Install Clean CSS plugin
-        run: npm install less-plugin-clean-css
+        run: |
+            npm install less
+            npm install less-plugin-clean-css
 
       - name: Run Tests
         run: echo "Running tests..."
