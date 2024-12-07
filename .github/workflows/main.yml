@@ -15,7 +15,7 @@ jobs:
             npm install less less-plugin-clean-css terser
 
       - name: Clean CSS
-        run: npx lessc -clean-css assets/css/site.less assets/css/site.css --clean-css
+        run: npx lessc -clean-css ./assets/css/site.less ./assets/css/site.css --clean-css
 
       - name: Run Tests
         run: echo "Running tests..."
